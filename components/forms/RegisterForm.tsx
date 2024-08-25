@@ -81,6 +81,8 @@ const RegisterForm = ({ user }: { user: User }) => {
           ? formData
           : undefined,
         privacyConsent: values.privacyConsent,
+        treatmentConsent: values.treatmentConsent,
+        disclosureConsent: values.disclosureConsent,
       };
 
       const newPatient = await registerPatient(patient);
@@ -378,4 +380,5 @@ const RegisterForm = ({ user }: { user: User }) => {
     </Form>
   );
 };
+
 export default RegisterForm;
