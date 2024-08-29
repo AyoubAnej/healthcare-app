@@ -5,6 +5,8 @@ import { formatDateTime } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import * as Sentry from "@sentry/nextjs";
+import { getUser } from "@/lib/actions/patient.action";
 
 const Success = async ({
   params: { userId },
@@ -16,17 +18,19 @@ const Success = async ({
   const doctor = Doctors.find(
     (doctor) => doctor.name === appointment.primaryPhysician
   );
+  const user = await getUser(userId);
+  Sentry.metrics.set("user_view_appointment-success", user.name);
 
   return (
     <div className="flex h-screen max-h-screen px-[5%]">
       <div className="success-img">
         <Link href="/">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/logo3.jpeg"
             height={1000}
             width={1000}
             alt="logo"
-            className="h-10 w-fit"
+            className="h-12 w-fit"
           />
         </Link>
         <section className="flex flex-col items-center">
@@ -37,8 +41,8 @@ const Success = async ({
             alt="success"
           />
           <h2 className="header mb-6 max-w-[600px] text-center">
-            Your <span className="text-green-500">appointement request</span>{" "}
-            has been successfully submitted!
+            Your <span className="text-blue-500">appointement request</span> has
+            been successfully submitted!
           </h2>
           <p className="text-white">We will be in touch shortly to confirm.</p>
         </section>
@@ -71,7 +75,7 @@ const Success = async ({
             New appointment
           </Link>
         </Button>
-        <p className="copyright">© 2024 CarePulse</p>
+        <p className="copyright">© 2024 CareSphere</p>
       </div>
     </div>
   );
