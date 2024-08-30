@@ -62,7 +62,7 @@ const PatientForm = () => {
           <h1 className="header">
             We VALUE YOUR <br />
             <span className="text-semibold text-[#3dbdec]">
-              FAMILY'S HEALTH & TIME
+              FAMILY&apos;S HEALTH & TIME
             </span>{" "}
           </h1>
           <p className="text-dark-700">Schedule your first appointement.</p>
