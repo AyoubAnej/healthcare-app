@@ -206,7 +206,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="emergencyContactName"
               label="Emergency contact name"
-              placeholder="Guardian's name"
+              placeholder="Guardian&apos;s name"
             />
 
             <CustomFormField
