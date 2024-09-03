@@ -60,7 +60,7 @@ const PatientForm = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="mb-12 space-y-4">
           <h1 className="header">
-            We VALUE YOUR <br />
+            WE VALUE YOUR <br />
             <span className="text-semibold text-[#3dbdec]">
               FAMILY&apos;S HEALTH & TIME
             </span>{" "}
